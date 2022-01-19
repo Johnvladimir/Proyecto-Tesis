@@ -31,8 +31,8 @@ const EntityList = ({ data }) => {
         data.nodes.map(({ name, methods, attributes }) => {
           const formatedAttributes = formatProperties(attributes);
           const formatedMethods = formatProperties(methods);
-          //console.log(formatedMethods, "formatedMethods");
-          //console.log(formatedAttributes, "formatedAttributes");
+          console.log(formatedMethods, "formatedMethods");
+          console.log(formatedAttributes, "formatedAttributes");
           return formatedMethods.find(
             (method) => method.toLowerCase() === "read()"
           ) ? (

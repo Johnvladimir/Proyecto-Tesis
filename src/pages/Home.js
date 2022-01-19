@@ -25,6 +25,7 @@ const Home = () => {
     const fileReader = new FileReader();
     fileReader.readAsText(e.target.files[0], "UTF-8");
     fileReader.onload = (e) => {
+      // console.log("e.target.result", e.target.result);
       setJSON(JSON.parse(e.target.result));
     };
   };
@@ -50,7 +51,7 @@ const Home = () => {
     <Layout>
       <Box>
         <BoxText>Crea interfaces desde diagramas UML fácil y rápido</BoxText>
-        <Button>Comienza ya</Button>
+        <BoxText>Comienza ya</BoxText>
       </Box>
       <Wrapper>
         {validateFileName()}

@@ -4,15 +4,10 @@ import { nanoid } from "nanoid";
 import { Form, FormWrapper, InputWrapper, Label, Title } from "./styles";
 import { Button } from "../../styles/common";
 
-import { DBRealtime } from '../../firebase-config';
-import { ref, set, onValue } from 'firebase/database'
-
 const AddForm = ({ entities, setEntities, entityName, attributes }) => {
   const [addFormData, setAddFormData] = useState({});
 
-  const writeData = () => {
-    set(ref(DBRealtime, entityName + '/' + addFormData.id), addFormData);
-  }
+  console.log(addFormData, "addFormData");
 
   const clearData = () => {
     const clearObj = {};
@@ -51,7 +46,6 @@ const AddForm = ({ entities, setEntities, entityName, attributes }) => {
               { id: nanoid(), entityName: entityName, ...addFormData },
             ],
           });
-          writeData();
     } else {
       addFormData.hasOwnProperty("id" || "ID" || "Id")
         ? setEntities({
@@ -64,7 +58,6 @@ const AddForm = ({ entities, setEntities, entityName, attributes }) => {
               { id: nanoid(), entityName: entityName, ...addFormData },
             ],
           });
-          writeData();
     }
 
     clearData();

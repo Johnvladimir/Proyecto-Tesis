@@ -10,7 +10,7 @@ export const BoxContainer = styled.div`
     margin 0 auto;
     margin-bottom: ${({ marginBottom }) => marginBottom || 0};
     padding: 100px;
-    background-color: #fff;
+    background-color: #D5E1F7;
     border-radius: 15px;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     @media screen and (max-width: 1024px) {

@@ -16,21 +16,13 @@ const About = () => {
       <Box txtAlgn="left" marginBottom="50px">
         <ProfileWrapper>
           <ImgWrapper>
-            <Image src={require("../assets/profile.jpg")} />
+            <Image src={require("../assets/profile1.jpg")} />
           </ImgWrapper>
           <TextWrapper>
-            <Title>Nombre Apellidos</Title>
+            <Title>Karla Lopez</Title>
             <Text>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+            Egresada de ingeniería informática, con conocimientos mayormente en JavaScript, C++, gestores de bases de datos como MySQL, Oracle y SQL management; 
+            correo de contacto: 00058615@uca.edu.sv 
             </Text>
           </TextWrapper>
         </ProfileWrapper>
@@ -38,21 +30,14 @@ const About = () => {
       <Box txtAlgn="left">
         <ProfileWrapper>
           <ImgWrapper>
-            <Image src={require("../assets/profile.jpg")} />
+            <Image src={require("../assets/profile2.jpg")} />
           </ImgWrapper>
           <TextWrapper>
-            <Title>Nombre Apellidos</Title>
+            <Title>John Linares</Title>
             <Text>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+            Egresado de ingeniería informática y conocimientos en desarrollo web en el framework VueJs y ASP.NET CORE, 
+            Desarrollo de aplicaciones móviles en el framework Flutter, experiencia en uso de la plataforma firebase para base de datos NoSQL y SQL Server.
+            correo de contacto: 00005016@uca.edu.sv
             </Text>
           </TextWrapper>
         </ProfileWrapper>
