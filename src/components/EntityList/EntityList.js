@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import diagram from "../../uml.json";
-
 import AddForm from "../AddForm/AddForm";
 import EntityItem from "./EntityItem";
 import { EntityItemContainer, Text, TextWrapper, Message } from "./styles";

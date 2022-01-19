@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import { nanoid } from "nanoid";
-import { Form, FormWrapper, InputWrapper, Label, Title } from "./styles";
+import { Form, FormWrapper, InputWrapper, Label } from "./styles";
 import { Button } from "../../styles/common";
 
 import { DBRealtime } from '../../firebase-config';
-import { ref, set, onValue, update, remove } from 'firebase/database'
+import { ref, set } from 'firebase/database'
 
 const AddForm = ({ entities, setEntities, entityName, attributes }) => {
   const [addFormData, setAddFormData] = useState({});

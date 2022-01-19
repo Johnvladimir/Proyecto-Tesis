@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-import EntityList from "./components/EntityList/EntityList";
 import Help from "./pages/Help";
 import Home from "./pages/Home";
 
-import { Link, Route } from "wouter";
+import { Route } from "wouter";
 
 import { GlobalStyle } from "./styles/globalStyles";
 import About from "./pages/About";

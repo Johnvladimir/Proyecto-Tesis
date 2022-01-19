@@ -4,17 +4,11 @@ import {
   Nav,
   NavbarContainer,
   NavLogo,
-  NavIcon,
   MobileIcon,
   NavMenu,
   NavItem,
-  NavItemBtn,
   NavLinks,
-  BoldSpan,
-  NavBtnLink,
 } from "./styles";
-
-import { Link } from "wouter";
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -42,9 +36,9 @@ function NavBar() {
         <NavbarContainer>
           <NavLogo to="/" onClick={closeMobileMenu} className="navlogo">
             {/* <NavIcon src={logo} alt="catech_logo" /> */}
-            Agora
+            UMLToUI
           </NavLogo>
-          <MobileIcon onClick={handleClick}>{click ? "X" : "O"}</MobileIcon>
+          <MobileIcon onClick={handleClick}>{click ? "X" : "<-"}</MobileIcon>
           <NavMenu onClick={handleClick} click={click}>
             <NavItem>
               <NavLinks to="/" onClick={closeMobileMenu}>

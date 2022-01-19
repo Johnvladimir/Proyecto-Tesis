@@ -4,7 +4,7 @@ import { IconBtnWrapper } from "./styles";
 const IconBtn = ({ icon, onClick }) => {
   return (
     <IconBtnWrapper onClick={onClick}>
-      <img src={icon} />
+      <img src={icon} alt="img"/>
     </IconBtnWrapper>
   );
 };
