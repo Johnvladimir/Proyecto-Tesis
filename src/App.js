@@ -9,7 +9,14 @@ import { Link, Route } from "wouter";
 import { GlobalStyle } from "./styles/globalStyles";
 import About from "./pages/About";
 
+import { DBRealtime } from './firebase-config';
+import { ref, onValue } from 'firebase/database'
+
 const App = () => {
+  const productoData = ref(DBRealtime, 'Productos');
+  onValue(productoData, (snapshot) => {
+    console.log(snapshot.val());
+  })
   return (
     <React.Fragment>
       <GlobalStyle />
