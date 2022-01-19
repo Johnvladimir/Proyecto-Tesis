@@ -4,6 +4,12 @@ import { nanoid } from "nanoid";
 import { Form, FormWrapper, InputWrapper, Label, Title } from "./styles";
 import { Button } from "../../styles/common";
 
+<<<<<<< HEAD
+=======
+import { DBRealtime } from '../../firebase-config';
+import { ref, set, onValue, update, remove } from 'firebase/database'
+
+>>>>>>> master
 const AddForm = ({ entities, setEntities, entityName, attributes }) => {
   const [addFormData, setAddFormData] = useState({});
 
