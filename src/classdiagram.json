@@ -1,0 +1,47 @@
+{
+  "diagram": "ClassDiagram",
+  "nodes": [
+    {
+      "methods": "Add()\nEdit()\nDelete()\nRead()",
+      "name": "Universidad",
+      "x": 510,
+      "y": 190,
+      "attributes": "Nombre\nCiudad",
+      "id": 0,
+      "type": "ClassNode"
+    },
+    {
+      "methods": "Add()\nEdit()\nDelete()",
+      "name": "Estudiante",
+      "x": 810,
+      "y": 190,
+      "attributes": "Nombre\nCarne",
+      "id": 1,
+      "type": "ClassNode"
+    },
+    {
+      "methods": "Add()\nEdit()\nDelete()",
+      "name": "Trabajador",
+      "x": 200,
+      "y": 180,
+      "attributes": "FechaInicio\nNombre\nCarne",
+      "id": 2,
+      "type": "ClassNode"
+    }
+  ],
+  "edges": [
+    {
+      "Generalization Type": "Inheritance",
+      "start": 0,
+      "end": 2,
+      "type": "GeneralizationEdge"
+    },
+    {
+      "Generalization Type": "Inheritance",
+      "start": 0,
+      "end": 1,
+      "type": "GeneralizationEdge"
+    }
+  ],
+  "version": "3.3"
+}
