@@ -7,6 +7,7 @@ const EditableRow = ({
   setEditFormData,
   entity,
 }) => {
+  
   const handleEditFormChange = (event) => {
     event.preventDefault();
 

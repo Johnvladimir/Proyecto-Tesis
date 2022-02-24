@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { nanoid } from "nanoid";
 import { Form, FormWrapper, InputWrapper, Label } from "./styles";
@@ -9,10 +9,6 @@ import { ref, set } from 'firebase/database'
 
 const AddForm = ({ entities, setEntities, entityName, attributes }) => {
   const [addFormData, setAddFormData] = useState({});
-
-  const writeData = () => {
-    set(ref(DBRealtime, entityName + '/' + addFormData.id), addFormData);
-  }
 
   const clearData = () => {
     const clearObj = {};
@@ -38,37 +34,53 @@ const AddForm = ({ entities, setEntities, entityName, attributes }) => {
     if (entities.hasOwnProperty(entityName)) {
       addFormData.hasOwnProperty("id" || "ID" || "Id")
         ? setEntities({
-            ...entities,
-            [entityName]: [
-              ...entities[entityName],
-              { entityName: entityName, ...addFormData },
-            ],
-          })
+          ...entities,
+          [entityName]: [
+            ...entities[entityName],
+            { entityName: entityName, ...addFormData },
+          ]
+        })
         : setEntities({
-            ...entities,
-            [entityName]: [
-              ...entities[entityName],
-              { id: nanoid(), entityName: entityName, ...addFormData },
-            ],
-          });
-          writeData();
+          ...entities,
+          [entityName]: [
+            ...entities[entityName],
+            { id: nanoid(), entityName: entityName, ...addFormData },
+          ],
+        });
     } else {
       addFormData.hasOwnProperty("id" || "ID" || "Id")
         ? setEntities({
-            ...entities,
-            [entityName]: [{ entityName: entityName, ...addFormData }],
-          })
+          ...entities,
+          [entityName]: [{ entityName: entityName, ...addFormData }],
+        })
         : setEntities({
-            ...entities,
-            [entityName]: [
-              { id: nanoid(), entityName: entityName, ...addFormData },
-            ],
-          });
-          writeData();
+          ...entities,
+          [entityName]: [
+            { id: nanoid(), entityName: entityName, ...addFormData },
+          ],
+        });
     }
-
     clearData();
   };
+
+  useEffect(() => {
+    Object.keys(entities).forEach(item => {
+      const a1 = entities[item];
+      const a2 = a1[a1.length -1];
+      //console.log(a2.entityName + ' ' + a2.id + ' ' + a2);
+      set(ref(DBRealtime, a2.entityName + '/' + a2.id), a2);
+    });
+    /*if (entities[Object.keys(entities)] != undefined) {
+      let flag = true;
+      const entitiesArr = entities[Object.keys(entities)]
+      const actualEntity = entitiesArr[entitiesArr.length - 1]
+      if(flag) {
+        set(ref(DBRealtime, actualEntity.entityName + '/' + actualEntity.id), actualEntity);
+        flag = false;
+      }
+    }*/
+  }, [entities])
+
   return (
     <FormWrapper>
       {/* <Title>{`Agregar ${entityName}`}</Title> */}

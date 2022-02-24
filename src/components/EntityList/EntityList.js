@@ -13,7 +13,7 @@ const EntityList = ({ data }) => {
   //console.log(entities, "contacts");
 
   const formatProperties = (properties) => {
-    const propertiesArr = properties.split("\n"); // [name, age, data]
+    const propertiesArr = properties.split("\n");
     const index = propertiesArr.indexOf("");
     if (index > -1) propertiesArr.splice(index, 1);
     return propertiesArr;
@@ -29,8 +29,7 @@ const EntityList = ({ data }) => {
         data.nodes.map(({ name, methods, attributes }) => {
           const formatedAttributes = formatProperties(attributes);
           const formatedMethods = formatProperties(methods);
-          console.log(formatedMethods, "formatedMethods");
-          console.log(formatedAttributes, "formatedAttributes");
+
           return formatedMethods.find(
             (method) => method.toLowerCase() === "read()"
           ) ? (

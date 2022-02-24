@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import Table from "../Table/Table";
 
+import { DBRealtime } from '../../firebase-config';
+import { ref, set, remove, update } from 'firebase/database'
+
 const EntityItem = ({ name, methods, attributes, entities, setEntities }) => {
   const [editFormData, setEditFormData] = useState({});
   const [entityInstanceID, setEntityInstanceID] = useState(null);
@@ -21,13 +24,18 @@ const EntityItem = ({ name, methods, attributes, entities, setEntities }) => {
   const handleEditClick = (event, entity) => {
     event.preventDefault();
     setEditFormData(entity);
+    //console.log(entity.entityName);
     setEntityInstanceID(entity.id);
     //setEditEntityName(entity.entityName);
+    update(ref(DBRealtime,entity.entityName + '/' + entity.id));
   };
 
   const handleDeleteClick = (id) => {
     const newEntities = { ...entities };
     const index = entities[name].findIndex((c) => c.id === id);
+    Object.keys(newEntities).forEach(item => {
+      remove(ref(DBRealtime, item + '/' + id));
+    });
     newEntities[name].splice(index, 1);
     setEntities(newEntities);
   };
